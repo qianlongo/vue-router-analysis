@@ -229,7 +229,7 @@ function createHref (base: string, fullPath: string, mode) {
 
 VueRouter.install = install
 VueRouter.version = '__VERSION__'
-
+// 在浏览器中且存在全局的Vue进行自动注册
 if (inBrowser && window.Vue) {
   window.Vue.use(VueRouter)
 }
