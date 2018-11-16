@@ -2,7 +2,7 @@
 
 import { inBrowser } from './dom'
 import { saveScrollPosition } from './scroll'
-
+// 是否支持history模式
 export const supportsPushState = inBrowser && (function () {
   const ua = window.navigator.userAgent
 

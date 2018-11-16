@@ -39,8 +39,9 @@ export default class VueRouter {
     this.beforeHooks = []
     this.resolveHooks = []
     this.afterHooks = []
+    // 创建 match 匹配函数
     this.matcher = createMatcher(options.routes || [], this)
-
+    // 根据 mode 实例化具体的 History
     let mode = options.mode || 'hash'
     this.fallback = mode === 'history' && !supportsPushState && options.fallback !== false
     if (this.fallback) {
