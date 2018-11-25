@@ -43,7 +43,9 @@ export default class VueRouter {
     this.matcher = createMatcher(options.routes || [], this)
     // 根据 mode 实例化具体的 History
     let mode = options.mode || 'hash'
+    // 当mode为history但是不支持history模式时回退到hash模式
     this.fallback = mode === 'history' && !supportsPushState && options.fallback !== false
+    // 回退为hash模式
     if (this.fallback) {
       mode = 'hash'
     }

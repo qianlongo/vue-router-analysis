@@ -8,7 +8,7 @@ export function install (Vue) {
   if (install.installed && _Vue === Vue) return
   // 添加已安装的标志
   install.installed = true
-
+  // 用内部变量保存Vue
   _Vue = Vue
   // 非undefined
   const isDef = v => v !== undefined

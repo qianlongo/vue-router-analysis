@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VueRouter from '../../dist/vue-router'
 
 // 1. Use plugin.
 // This installs <router-view> and <router-link>,
@@ -21,6 +21,8 @@ const router = new VueRouter({
     { path: '/bar', component: Bar }
   ]
 })
+
+window.router = router
 
 // 4. Create and mount root instance.
 // Make sure to inject the router.
