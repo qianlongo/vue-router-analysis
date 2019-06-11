@@ -91,14 +91,14 @@ export default class VueRouter {
       `not installed. Make sure to call \`Vue.use(VueRouter)\` ` +
       `before creating root instance.`
     )
-
+    // 回想一下install中，每个组件都会执行init函数，这里搜集子组件的实例
     this.apps.push(app)
 
     // main app already initialized.
     if (this.app) {
       return
     }
-
+    // 只有第一个执行init的才会走到这里，所以一定是根组件
     this.app = app
 
     const history = this.history
@@ -115,9 +115,10 @@ export default class VueRouter {
         setupHashListener
       )
     }
-
+    // 更新路由的时候会执行listen添加的回调
     history.listen(route => {
       this.apps.forEach((app) => {
+        // 为每个实例都添加一个_route属性????  作用是啥？
         app._route = route
       })
     })
