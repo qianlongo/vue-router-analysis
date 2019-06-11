@@ -27,7 +27,7 @@ export function install (Vue) {
         this._routerRoot = this
         this._router = this.$options.router
         this._router.init(this)
-        // 定义响应式的_route
+        // 定义响应式的_route, 即current变化了 对应的view也会更新
         Vue.util.defineReactive(this, '_route', this._router.history.current)
       } else {
         // 非根节点取其父节点
