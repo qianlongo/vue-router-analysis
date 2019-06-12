@@ -24,6 +24,7 @@ export function install (Vue) {
     beforeCreate () {
       // 是否有router 根节点有
       if (isDef(this.$options.router)) {
+        // 在子组件中指向的是跟Vue实例
         this._routerRoot = this
         this._router = this.$options.router
         this._router.init(this)
