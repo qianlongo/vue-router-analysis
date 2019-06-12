@@ -37,7 +37,9 @@ export default class VueRouter {
     this.app = null
     // 所有子组件的vue实例
     this.apps = []
+    // 初始化时候传入的参数
     this.options = options
+    // 
     this.beforeHooks = []
     this.resolveHooks = []
     this.afterHooks = []
