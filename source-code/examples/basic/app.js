@@ -1,5 +1,6 @@
 import Vue from 'vue'
-import VueRouter from '../../dist/vue-router'
+// import VueRouter from '../../dist/vue-router'
+import VueRouter from '../../src/index'
 
 // 1. Use plugin.
 // This installs <router-view> and <router-link>,
